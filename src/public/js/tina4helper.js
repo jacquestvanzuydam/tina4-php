@@ -18,6 +18,8 @@ function sendRequest (url, request, method, callback) {
         method = 'GET';
     }
 
+    url = new URL(url, window.location.href);
+    
     //Inject the new token
     if (formToken !== null) {
         const regex = /formToken=(.*)/gm;
